@@ -1,0 +1,11 @@
+Round 1: Vague Prompt
+Round 1 used a single vague prompt to create the settings form. The AI produced a working starting point, but the requirements were not clearly defined. The implementation needed more manual review because important details such as validation behavior, accessibility, edge cases, and test coverage were not specified in the prompt. This made it harder to know whether the generated code fully matched the project requirements.
+Round 2: Precise Prompt
+Round 2 used a precise prompt with project file references, explicit constraints, expected validation behavior, and a verification step. The AI first explored the relevant files and planned the implementation before making changes. It then implemented the settings form and created tests for both valid and invalid inputs. Running the tests provided objective evidence that the validation and API behavior worked as expected.
+Specific Differences
+The biggest difference was verification. Round 1 mainly relied on reviewing the generated implementation, while Round 2 included automated tests. Round 2 also handled individual validation rules more explicitly, including required display name, valid email format, username restrictions, bio length, theme selection, and language selection.
+Accessibility and user experience also received more attention in Round 2. Clear field errors and predictable validation behavior made the form easier to review and use.
+AI Mistake Caught
+One important lesson was that AI-generated code cannot be accepted without verification. During the workflow, the validation implementation changed from settingsSchema.js to settingsValidation.js. Reviewing the project structure and running the tests helped catch and confirm these implementation details instead of assuming the generated code was correct.
+Review Effort and Conclusion
+Round 2 required more planning and a more detailed prompt at the beginning, but it reduced the amount of uncertainty and manual fixing later. The tests made it easier to verify correctness and edge cases. Round 1 was faster to start, but required more review because the requirements were vague. Round 2 is the better workflow for future project work because clear specifications, file references, constraints, and automated verification produce more reliable results and make AI-generated code easier to review.
